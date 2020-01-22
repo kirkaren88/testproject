@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="answer1q1" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="1"/>
+        <constructor-arg name="name" value="Spring is a framework"/>
+        <constructor-arg name="questionId" value="1"/>
+    </bean>
+
+    <bean id="answer2q1" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="2"/>
+        <constructor-arg name="name" value="Spring is a season"/>
+        <constructor-arg name="questionId" value="1"/>
+    </bean>
+
+    <bean id="answer3q1" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="3"/>
+        <constructor-arg name="name" value="Spring is a program"/>
+        <constructor-arg name="questionId" value="1"/>
+    </bean>
+
+    <bean id="question1" class="com.egs.testproject.quiz_crud.Question">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="What is Spring?"/>
+        <constructor-arg>
+            <set>
+                <ref bean="answer1q1"/>
+                <ref bean="answer2q1"/>
+                <ref bean="answer3q1"/>
+            </set>
+        </constructor-arg>
+        <constructor-arg name="point" value="1"/>
+        <constructor-arg name="correctAnswer" value="1"/>
+    </bean>
+
+
+    <bean id="answer1q2" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="1"/>
+        <constructor-arg name="name" value="Spring MVC"/>
+        <constructor-arg name="questionId" value="2"/>
+    </bean>
+
+    <bean id="answer2q2" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="2"/>
+        <constructor-arg name="name" value="Spring Bean"/>
+        <constructor-arg name="questionId" value="2"/>
+    </bean>
+
+    <bean id="answer3q2" class="com.egs.testproject.quiz_crud.Answer">
+        <constructor-arg name="ans" value="3"/>
+        <constructor-arg name="name" value="Summer"/>
+        <constructor-arg name="questionId" value="2"/>
+    </bean>
+
+    <bean id="question2" class="com.egs.testproject.quiz_crud.Question">
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="Which of these are Spring modules?"/>
+        <constructor-arg>
+            <set>
+                <ref bean="answer1q2"/>
+                <ref bean="answer2q2"/>
+                <ref bean="answer3q2"/>
+            </set>
+        </constructor-arg>
+        <constructor-arg name="point" value="1"/>
+        <constructor-arg name="correctAnswer" value="1"/>
+    </bean>
+
+</beans>
