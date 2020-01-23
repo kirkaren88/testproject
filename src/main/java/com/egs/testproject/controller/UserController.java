@@ -1,0 +1,9 @@
+package com.egs.testproject.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+
+}
