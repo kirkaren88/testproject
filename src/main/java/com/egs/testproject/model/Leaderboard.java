@@ -1,5 +1,6 @@
 package com.egs.testproject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,8 +10,9 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table
+@AllArgsConstructor
 public
-class Leaderboard {
+class Leaderboard{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

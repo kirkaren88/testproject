@@ -3,8 +3,8 @@ package com.egs.testproject.controller;
 import com.egs.testproject.model.Leaderboard;
 import com.egs.testproject.repository.LeaderboardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -17,14 +17,16 @@ public class LeaderboardController {
         this.leaderboardRepository = userRepository;
     }
 
-    @GetMapping("/users")
-    List<Leaderboard> findAll() {
-        return leaderboardRepository.findAll();
-    }
-
     @GetMapping("/sortedUsers")
     List<Leaderboard> sortedUsers() {
         return leaderboardRepository.findAllByOrderByUsersCountDesc();
     }
 
+    @RequestMapping(
+            value = "/addUsers",
+            produces = "application/json",
+            method = {RequestMethod.POST})
+    public void addUsers(@RequestBody Leaderboard leaderboard) throws Exception {
+        leaderboardRepository.save(leaderboard);
+    }
 }
