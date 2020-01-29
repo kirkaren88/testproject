@@ -10,12 +10,6 @@ class TestprojectApplicationTests {
 
     @Test
     void contextLoads() {
-        QuestionService questionService = new QuestionService();
-
-        Question question1 = new Question();
-        question1.setId(1);
-        question1.setName("What is your name?");
-        questionService.createQuestion(question1);
     }
 
 }
