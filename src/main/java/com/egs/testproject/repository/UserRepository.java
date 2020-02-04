@@ -1,10 +1,19 @@
 package com.egs.testproject.repository;
 
-import com.egs.testproject.model.User;
+
+import com.egs.testproject.model.dto.LeaderBoardDto;
+import com.egs.testproject.model.persistence.User;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+
+     User findByEmail(String email);
+
+    List<User> findAllBy(Sort sort);
 }
